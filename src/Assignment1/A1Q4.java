@@ -53,6 +53,7 @@ public class A1Q4 {
         karel.turnLeft();
         karel.move();
         hunter.move();
+        
                 
     }
 }
