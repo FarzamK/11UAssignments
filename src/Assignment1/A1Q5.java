@@ -26,7 +26,7 @@ public class A1Q5 {
         
         //create 2 robots 
         Robot karel = new Robot(england, 3, 3, Direction.EAST);
-        Robot maria = new Robot(england, 0, 1, Direction.SOUTH);
+        Robot maria = new Robot(england, 0, 1, Direction.WEST);
         
         //change robot's colours
         karel.setColor(Color.BLUE);
@@ -48,6 +48,28 @@ public class A1Q5 {
         new Wall(england, 2, 3, Direction.EAST);
         new Wall(england, 3, 3, Direction.EAST);
         new Wall(england, 3, 3, Direction.SOUTH);
+        
+        //make karel and maria pick up the grocceries
+        
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.move();
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.turnLeft();
+        maria.move();
+        karel.move();
+        maria.pickThing();
+        karel.pickThing();
+        maria.turnLeft();
+        maria.move();
+        karel.move();
+        maria.pickThing();
+        karel.pickThing();
+        maria.turnLeft();
+        maria.move();
+        karel.turnLeft();
+        maria.pickThing();
         
         //
     }
