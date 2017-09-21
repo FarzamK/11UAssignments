@@ -45,9 +45,10 @@ public class A2Q2 {
        new Wall(kw, 4, 2, Direction.EAST);
        new Wall(kw, 4, 4, Direction.EAST);
        new Wall(kw, 4, 7, Direction.EAST);
-       
+       // Create a thing
        new Thing(kw, 4, 9);
        
+       //create an algortihm to make karel jump over hurdles
        while(!karel.canPickThing() == true){
 
                   if(karel.frontIsClear() != true){
