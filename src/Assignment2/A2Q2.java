@@ -7,6 +7,7 @@ package Assignment2;
 import becker.robots.City;
 import becker.robots.Direction;
 import becker.robots.Robot;
+import becker.robots.Thing;
 import becker.robots.Wall;
 import java.awt.Color;
 
@@ -45,16 +46,27 @@ public class A2Q2 {
        new Wall(kw, 4, 4, Direction.EAST);
        new Wall(kw, 4, 7, Direction.EAST);
        
-       while(karel.frontIsClear() == true){
-           karel.move();
-                  if(karel.canPickThing() != true){
-                    karel.move();
-                    if(!karel.frontIsClear()){
+       new Thing(kw, 4, 9);
+       
+       while(!karel.canPickThing() == true){
+
+                  if(karel.frontIsClear() != true){
                         karel.turnLeft();
                         karel.move();
+                        karel.turnLeft();
+                        karel.turnLeft();
+                        karel.turnLeft();
+                        karel.move();
+                        karel.turnLeft();
+                        karel.turnLeft();
+                        karel.turnLeft();
+                        karel.move();
+                        karel.turnLeft();
                         
                         
-                    }
+                      
+                    }else{
+                      karel.move();
        }
            
 
