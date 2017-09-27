@@ -22,7 +22,7 @@ public class A2Q3 {
         City kw = new City();
 
         // put a robot in the city
-        Robot karel = new Robot(kw, 4, 1, Direction.EAST);
+        Robot karel = new Robot(kw, 3, 2, Direction.EAST);
 
         //change karels color
         karel.setColor(Color.CYAN);
@@ -37,8 +37,15 @@ public class A2Q3 {
                 
 
             }
+           
             }
-
+        while (karel.getDirection()!= Direction.NORTH){
+            karel.turnLeft();
+        }
+        while (karel.getStreet()!= 0){
+            karel.move();
+        }
+            
         }
 
     }
