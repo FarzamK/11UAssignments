@@ -71,6 +71,7 @@ public class A1Q2 {
         karel.turnLeft();
         
         
+        
                 
     }
 }

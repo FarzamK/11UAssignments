@@ -61,5 +61,6 @@ public class A1Q1 {
         karel.turnLeft();
         karel.move();
         
+        
     }
 }
