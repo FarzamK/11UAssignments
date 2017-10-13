@@ -68,10 +68,27 @@ public class A4Q5 {
         
         double scoreMarkOne = markOne/scoreOne * 100;
         
+        double scoreMarkTwo = markTwo/scoreTwo * 100;
         
+        double scoreMarkThree = markThree/scoreThree * 100;
         
+        double scoreMarkFour = markFour/scoreFour * 100;
         
+        double scoreMarkFive = markFive/scoreFive * 100;
         
+        System.out.println("Test 1: " + scoreMarkOne + "%");
+        
+        System.out.println("Test 2: " + scoreMarkTwo + "%");
+        
+        System.out.println("Test 3: " + scoreMarkThree + "%");
+                
+        System.out.println("Test 4: " + scoreMarkFour + "%");
+        
+        System.out.println("Test 5: " + scoreMarkFive + "%");
+        
+        double average = (scoreMarkOne + scoreMarkTwo + scoreMarkThree + scoreMarkFour + scoreMarkFive) / 5;
+        
+        System.out.println("Average: " + average + "%");
         
     }
 }
