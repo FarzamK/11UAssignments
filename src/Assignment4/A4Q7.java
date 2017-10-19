@@ -43,50 +43,55 @@ public class A4Q7 {
                 if (outputDice == 0) {
                     System.out.println("You Quit!");
                     break;
+                }
+
+
+
+                if (currentSquare + outputDice > 100) {
+                    System.out.println("You cannot go past 100, please try again");
                 } else {
 
 
+                    currentSquare = currentSquare + outputDice;
 
-                    if (currentSquare + outputDice > 100) {
-                        System.out.println("You cannot go past 100, please try again");
-                    } else {
+                    System.out.println("You are now on square " + currentSquare);
 
-
-                        currentSquare = currentSquare + outputDice;
-
+                    if (currentSquare == 9) {
+                        currentSquare = 34;
                         System.out.println("You are now on square " + currentSquare);
-
-                        if (currentSquare == 9) {
-                            currentSquare = 34;
-                        }
-                        if (currentSquare == 40) {
-                            currentSquare = 64;
-                        }
-                        if (currentSquare == 54) {
-                            currentSquare = 19;
-                        }
-                        if (currentSquare == 67) {
-                            currentSquare = 86;
-                        }
-                        if (currentSquare == 90) {
-                            currentSquare = 48;
-                        }
-                        if (currentSquare == 99) {
-                            currentSquare = 77;
-                        }
-                        if (currentSquare == 100) {
-                            System.out.println("You Win!");
-                        }
-
-
-
-
-
                     }
+                    if (currentSquare == 40) {
+                        currentSquare = 64;
+                        System.out.println("You are now on square " + currentSquare);
+                    }
+                    if (currentSquare == 54) {
+                        currentSquare = 19;
+                        System.out.println("You are now on square " + currentSquare);
+                    }
+                    if (currentSquare == 67) {
+                        currentSquare = 86;
+                        System.out.println("You are now on square " + currentSquare);
+                    }
+                    if (currentSquare == 90) {
+                        System.out.println("You are now on square " + currentSquare);
+                        currentSquare = 48;
+                    }
+                    if (currentSquare == 99) {
+                        currentSquare = 77;
+                        System.out.println("You are now on square " + currentSquare);
+                    }
+                    if (currentSquare == 100) {
+                        System.out.println("You Win!");
+                    }
+
+
+
+
 
                 }
 
             }
+
         }
     }
 }
