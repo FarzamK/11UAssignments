@@ -58,26 +58,33 @@ public class A4Q07 {
 
                     if (currentSquare == 9) {
                         currentSquare = 34;
+                        System.out.println("You climbed up a ladder!");
                         System.out.println("You are now on square " + currentSquare);
                     }
                     if (currentSquare == 40) {
                         currentSquare = 64;
+                        System.out.println("You climbed up a ladder!");
                         System.out.println("You are now on square " + currentSquare);
                     }
                     if (currentSquare == 54) {
                         currentSquare = 19;
+                        System.out.println("Oops! You caught a snake!");
                         System.out.println("You are now on square " + currentSquare);
                     }
                     if (currentSquare == 67) {
                         currentSquare = 86;
+                        System.out.println("You climbed up a ladder!");
                         System.out.println("You are now on square " + currentSquare);
                     }
                     if (currentSquare == 90) {
-                        System.out.println("You are now on square " + currentSquare);
                         currentSquare = 48;
+                        System.out.println("Oops! You caught a snake!");
+                        System.out.println("You are now on square " + currentSquare);
+                        
                     }
                     if (currentSquare == 99) {
                         currentSquare = 77;
+                        System.out.println("Oops you caught a snake!");
                         System.out.println("You are now on square " + currentSquare);
                     }
                     if (currentSquare == 100) {
