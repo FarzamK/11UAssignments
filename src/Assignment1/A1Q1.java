@@ -16,6 +16,7 @@ import java.awt.Color;
  * @author kathf6052
  */
 public class A1Q1 {
+
     private static City kitchener;
 
     /**
@@ -24,10 +25,10 @@ public class A1Q1 {
     public static void main(String[] args) {
         // Create a new city named England
         City england = new City();
-        
+
         //create a robot 
         Robot karel = new Robot(england, 0, 2, Direction.WEST);
-                
+
         //Create a square using walls
         new Wall(england, 1, 1, Direction.NORTH);
         new Wall(england, 1, 2, Direction.NORTH);
@@ -37,12 +38,12 @@ public class A1Q1 {
         new Wall(england, 2, 2, Direction.SOUTH);
         new Wall(england, 2, 2, Direction.EAST);
         new Wall(england, 1, 2, Direction.EAST);
-        
-        
-    
+
+
+
         //Change karel's colour
         karel.setColor(Color.BLUE);
-        
+
         //make karel go around square
         karel.move();
         karel.move();
@@ -60,7 +61,7 @@ public class A1Q1 {
         karel.move();
         karel.turnLeft();
         karel.move();
-        
-        
+
+
     }
 }

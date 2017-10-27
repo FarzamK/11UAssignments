@@ -25,12 +25,12 @@ public class A2Q1 {
 
         // put a robot in the city
         Robot karel = new Robot(kw, 1, 1, Direction.EAST);
-        
+
         //change karels color
         karel.setColor(Color.BLUE);
-       
+
         //Put 10 thing in a row
-        
+
         new Thing(kw, 1, 2);
         new Thing(kw, 1, 3);
         new Thing(kw, 1, 4);
@@ -41,23 +41,19 @@ public class A2Q1 {
         new Thing(kw, 1, 9);
         new Thing(kw, 1, 10);
         new Thing(kw, 1, 11);
-        
+
         //Write an algorithm to make karel pick 7 of them and continue walking 
-        while (karel.getAvenue() !=  12) {
+        while (karel.getAvenue() != 12) {
             karel.move();
-            if (karel.getAvenue() < 9)
+            if (karel.getAvenue() < 9) {
                 karel.pickThing();
-            
+            }
 
-            
+
+
         }
-            
-            
-        
-    }
-        
 
 
 
     }
-
+}

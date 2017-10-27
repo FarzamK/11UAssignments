@@ -33,7 +33,7 @@ public class A3Q3 {
 
         // make karel plant his crops 
 
-        for (int moveCount= 0; moveCount< 16; moveCount= moveCount+ 1) {
+        for (int moveCount = 0; moveCount < 16; moveCount = moveCount + 1) {
             karel.putThing();
             karel.move();
 
@@ -59,5 +59,3 @@ public class A3Q3 {
 
     }
 }
-
-

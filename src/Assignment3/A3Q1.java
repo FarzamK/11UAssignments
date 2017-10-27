@@ -32,21 +32,21 @@ public class A3Q1 {
         // create a square with walls
         new Wall(kw, 1, 1, Direction.NORTH);
         new Wall(kw, 1, 1, Direction.WEST);
-        
+
         new Wall(kw, 1, 2, Direction.NORTH);
         new Wall(kw, 2, 1, Direction.WEST);
-        
+
         new Wall(kw, 2, 1, Direction.SOUTH);
         new Wall(kw, 2, 2, Direction.SOUTH);
-        
+
         new Wall(kw, 1, 2, Direction.EAST);
         new Wall(kw, 2, 2, Direction.EAST);
-        
-                
-                
-                
-                
-       // make karel move around the square  
+
+
+
+
+
+        // make karel move around the square  
         for (int moveCounter = 0; moveCounter < 8; moveCounter = moveCounter + 1) {
             karel.move();
             karel.move();

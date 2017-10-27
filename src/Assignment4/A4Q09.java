@@ -135,7 +135,7 @@ public class A4Q09 extends javax.swing.JFrame {
         double result = addNum + addNum2;
         String resultString = String.valueOf(result);
         output.setText(resultString);
-        
+
     }//GEN-LAST:event_addActionPerformed
 
     private void subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subActionPerformed

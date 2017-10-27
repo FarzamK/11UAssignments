@@ -28,10 +28,10 @@ public class A3Q2 {
 
         //change karels color
         karel.setColor(Color.YELLOW);
-        
+
         //create counter for things
         kw.showThingCounts(true);
-        
+
         //create Things
         new Thing(kw, 1, 2);
         new Thing(kw, 1, 2);
@@ -43,8 +43,8 @@ public class A3Q2 {
         new Thing(kw, 1, 2);
         new Thing(kw, 1, 2);
         new Thing(kw, 1, 2);
-        
-        for(int count = 0; count < 10; count = count +1){
+
+        for (int count = 0; count < 10; count = count + 1) {
             karel.pickThing();
             karel.move();
             karel.putThing();
@@ -53,8 +53,8 @@ public class A3Q2 {
             karel.move();
             karel.turnLeft();
             karel.turnLeft();
-        
-    }
+
+        }
         karel.move();
-  }
+    }
 }

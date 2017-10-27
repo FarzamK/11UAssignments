@@ -22,22 +22,22 @@ public class A1Q4 {
     public static void main(String[] args) {
         // Create a new city named England
         City england = new City();
-        
+
         //create 2 robots 
         Robot karel = new Robot(england, 0, 0, Direction.SOUTH);
         Robot hunter = new Robot(england, 0, 1, Direction.SOUTH);
-        
+
         //change robot's colours
         karel.setColor(Color.BLUE);
         hunter.setColor(Color.RED);
-        
+
         //create walls
         new Wall(england, 0, 1, Direction.WEST);
         new Wall(england, 1, 1, Direction.WEST);
         new Wall(england, 1, 1, Direction.SOUTH);
-        
+
         //make the robots face each other 
-        
+
         karel.move();
         hunter.move();
         karel.move();
@@ -53,9 +53,9 @@ public class A1Q4 {
         karel.turnLeft();
         karel.move();
         hunter.move();
-        
-        
-        
-                
+
+
+
+
     }
 }

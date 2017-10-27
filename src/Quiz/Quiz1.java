@@ -57,17 +57,17 @@ public class Quiz1 {
 // code karel to clear mine of debris 1 at a time
         while (karel.frontIsClear()) {
             karel.move();
-            
+
             if (karel.canPickThing()) {
                 karel.pickThing();
-                
+
                 if (!karel.frontIsClear()) {
                     // break the loop
                     break;
                 }
                 karel.turnLeft();
                 karel.turnLeft();
-                
+
                 while (karel.frontIsClear()) {
                     karel.move();
                 }

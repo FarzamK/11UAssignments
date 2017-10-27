@@ -34,19 +34,17 @@ public class A2Q3 {
                 karel.turnLeft();
             } else {
                 karel.move();
-                
+
 
             }
-           
-            }
-        while (karel.getDirection()!= Direction.NORTH){
+
+        }
+        while (karel.getDirection() != Direction.NORTH) {
             karel.turnLeft();
         }
-        while (karel.getStreet()!= 0){
+        while (karel.getStreet() != 0) {
             karel.move();
-        }
-            
         }
 
     }
-
+}

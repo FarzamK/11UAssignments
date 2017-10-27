@@ -27,7 +27,7 @@ public class A1Q5 {
         //create 2 robots 
         Robot karel = new Robot(england, 3, 3, Direction.EAST);
         Robot maria = new Robot(england, 0, 1, Direction.WEST);
-        
+
         //change robot's colours
         karel.setColor(Color.BLUE);
         maria.setColor(Color.RED);
@@ -35,22 +35,22 @@ public class A1Q5 {
         karel.setLabel("K");
         maria.setLabel("M");
         //put things
-        
+
         new Thing(england, 0, 0);
         new Thing(england, 1, 0);
         new Thing(england, 1, 1);
         new Thing(england, 1, 2);
         new Thing(england, 2, 2);
-        
+
         //create walls 
         new Wall(england, 2, 3, Direction.WEST);
         new Wall(england, 2, 3, Direction.NORTH);
         new Wall(england, 2, 3, Direction.EAST);
         new Wall(england, 3, 3, Direction.EAST);
         new Wall(england, 3, 3, Direction.SOUTH);
-        
+
         //make karel and maria pick up the grocceries
-        
+
         karel.turnLeft();
         karel.turnLeft();
         karel.move();
@@ -70,7 +70,7 @@ public class A1Q5 {
         maria.move();
         karel.turnLeft();
         maria.pickThing();
-        
+
         //
     }
 }

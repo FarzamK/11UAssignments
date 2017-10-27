@@ -28,7 +28,7 @@ public class A4Q03 {
         double secondNum = inputTwo.nextDouble();
         double thirdNum = inputThree.nextDouble();
         double fourthNum = inputFour.nextDouble();
-        
+
         System.out.println("Your numbers were " + firstNum + ", " + secondNum + ", " + thirdNum + ", and " + fourthNum);
 
 

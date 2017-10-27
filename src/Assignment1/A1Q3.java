@@ -23,15 +23,15 @@ public class A1Q3 {
     public static void main(String[] args) {
 // Create a new city named England
         City england = new City();
-        
+
         //create a robot 
         Robot karel = new Robot(england, 3, 0, Direction.EAST);
-        
+
         new Thing(england, 3, 1);
-        
+
         //change karel colour
         karel.setColor(Color.YELLOW);
-        
+
         //create walls \
         new Wall(england, 3, 2, Direction.WEST);
         new Wall(england, 3, 2, Direction.NORTH);
@@ -42,7 +42,7 @@ public class A1Q3 {
         new Wall(england, 2, 4, Direction.NORTH);
         new Wall(england, 2, 4, Direction.EAST);
         new Wall(england, 3, 4, Direction.EAST);
-        
+
         //make karel move, pick up the thing and deliver
         karel.move();
         karel.pickThing();
@@ -73,11 +73,11 @@ public class A1Q3 {
         karel.move();
         karel.move();
         karel.turnLeft();
-        
-      
-        
-        
-        
-        
+
+
+
+
+
+
     }
 }
