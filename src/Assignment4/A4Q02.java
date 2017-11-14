@@ -16,19 +16,15 @@ public class A4Q02 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
         //create a scanner for inpit
         Scanner input = new Scanner(System.in);
-
         //print out text to tell user to put in inches
         System.out.println("Please enter the measurement in inches you wish to convert");
-
         // let the user type in inches
         double inches = input.nextDouble();
-
-        //
+        // declare a variable and do the math
         double centi = inches * 2.54;
-
+        // 
         System.out.println(inches + " inches is the same as " + centi + "cm");
 
         while (inches < 0) {
