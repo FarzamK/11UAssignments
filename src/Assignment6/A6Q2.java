@@ -16,7 +16,7 @@ public class A6Q2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Create scanner for input
+        // Create scanners for input
         Scanner peopleInput = new Scanner(System.in);
         Scanner heightInput = new Scanner(System.in);
         // Ask user how many people there are 
@@ -33,19 +33,23 @@ public class A6Q2 {
         for (int i = 0; i < people; i++) {
             // create an array for what user inputs
             heights[i] = heightInput.nextDouble();
-            // 
+            // add heights to the calculation to figure out the average
             calculation = calculation + heights[i];
             
             
         }
+        // do the math for the average height
         double average = Math.round (calculation / people);
-        
+        // display the average height to the user
         System.out.println("The average height was " + average + "cm");
-        
+        // Ouput 
+        System.out.println("The heights above average are: ");
+        // create a for loop to display out the heights above average
         for (int x = 0; x < people; x++){
-          
+            // if statement to display the heights above averahe
             if(heights[x] > average){
                 System.out.println(heights[x]);
+                
                 
                 
             
