@@ -26,7 +26,7 @@ public class A6Q2 {
         // create an array for the heights
         double[] heights = new double[people];
         // Ask user for the heights
-        System.out.println("Please enter the heights:");   
+        System.out.println("Please enter the heights:");
         // Create a double and declare it as 0 to do the math with it later
         double calculation = 0;
         // for loop
@@ -35,26 +35,24 @@ public class A6Q2 {
             heights[i] = heightInput.nextDouble();
             // add heights to the calculation to figure out the average
             calculation = calculation + heights[i];
-            
-            
         }
         // do the math for the average height
-        double average = Math.round (calculation / people);
+        double average = Math.round(calculation / people);
         // display the average height to the user
         System.out.println("The average height was " + average + "cm");
         // Ouput 
         System.out.println("The heights above average are: ");
         // create a for loop to display out the heights above average
-        for (int x = 0; x < people; x++){
+        for (int x = 0; x < people; x++) {
             // if statement to display the heights above averahe
-            if(heights[x] > average){
+            if (heights[x] > average) {
                 System.out.println(heights[x]);
-                
-                
-                
-            
+
+
+
+
+            }
         }
-    }
-        
+
     }
 }
