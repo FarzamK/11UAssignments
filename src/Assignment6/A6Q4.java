@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author kathf6052
  */
-public class A6Q3 {
+public class A6Q4 {
 
     /**
      * @param args the command line arguments
@@ -19,31 +19,20 @@ public class A6Q3 {
         // create scanners for input
         Scanner input = new Scanner(System.in);
         // create an array
-        int[] integer = new int[2];
+        int[] grades = new int[10];
         // display out a statement to tell the user to put in the two numbers
         System.out.println("Enter two numbers");
         // for loop  
-        for (int i = 0; i < 2; i++) {
-            integer[i] = input.nextInt();
-
+        for (int i = 0; i < 10; i++) {
+            grades[i] = input.nextInt();
+            
+            
         }
-
-
-        if (integer[0] > integer[1]) {
-            
-           int arrange = integer[1];
-            
-            integer[1] = integer[0];
-            
-            integer[0] = arrange;
-
-
-
-        }
-        System.out.println("The numbers in order are:  " + integer[0] + ", " + integer[1] + ".");
-
-
-
-
+        for (int x = 0; x < grades.length; x++){
+            if(grades[x] > grades[x + 1]){
+                
+                
+            }
+    }
     }
 }
