@@ -21,18 +21,27 @@ public class A6Q4 {
         // create an array
         int[] grades = new int[10];
         // display out a statement to tell the user to put in the two numbers
-        System.out.println("Enter two numbers");
+        System.out.println("Enter ten marks");
         // for loop  
         for (int i = 0; i < 10; i++) {
-            grades[i] = input.nextInt();
-            
-            
+            grades[i] = input.nextInt(); 
         }
-        for (int x = 0; x < grades.length; x++){
-            if(grades[x] > grades[x + 1]){
+        
+        for(int z = 0; z < grades.length; z++){
+        
+        for(int y = 0; y < grades.length-1; y++){
+            if(grades[y] > grades[y+1]){
+                int store = grades[y];
                 
+                grades[y] = grades[y+1];
                 
+                grades[y+1] = store;
             }
+            System.out.println("The marks in ascending order are: ");
+            for(int p = 0; p < grades.length; p++){
+                System.out.println(grades[p]);
+            }
+        }
     }
-    }
+}
 }
