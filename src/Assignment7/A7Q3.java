@@ -40,7 +40,7 @@ public class A7Q3 {
         int integer = in.nextInt();
         // display 
         System.out.println("The factors of " + integer + " are: ");
-        // run the method 
+        // run the method       
         run.factor(integer);
         
 
