@@ -24,6 +24,7 @@ public class A6Q4 {
         System.out.println("Enter ten marks");
         // for loop  
         for (int i = 0; i < 10; i++) {
+            // 
             grades[i] = input.nextInt(); 
         }
         
