@@ -14,7 +14,9 @@ public class A6Q7 {
     public static void main(String[] args) {
         // create scanner
         Scanner input = new Scanner(System.in);
-        
+        // ask user to enter a number
+        System.out.println("Please enter a number");
+        //assign what the user entered a varible
         int integer = input.nextInt();
         // create an array for the number
         int[] numbers = new int[1001];
@@ -49,7 +51,7 @@ public class A6Q7 {
         }
         // tell the user if the number is prime or composite
         if(PorC[integer] == true){
-            System.out.println("The number you inputted is prime");
+            System.out.println("The number you entered is prime");
         }else{
             System.out.println("The number you entered is composite");
         }

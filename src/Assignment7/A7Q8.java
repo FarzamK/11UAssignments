@@ -4,16 +4,31 @@
  */
 package Assignment7;
 
+import java.util.Scanner;
+
 /**
  *
  * @author kathf6052
  */
 public class A7Q8 {
 
+    public boolean allDigitsOdd(boolean oddOrNah, int integer) {
+        while (integer >= 10) {
+            
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        Scanner in = new Scanner(System.in);
+
+        int number = in.nextInt();
+
+        A7Q8 test = new A7Q8();
+
+
     }
 }
