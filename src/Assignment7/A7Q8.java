@@ -12,10 +12,26 @@ import java.util.Scanner;
  */
 public class A7Q8 {
 
-    public boolean allDigitsOdd(boolean oddOrNah, int integer) {
-        while (integer >= 10) {
-            
+    public boolean allOddDigits(int number) {
+        // if the number is negative turn it positive
+        if (number < 0) {
+            number = number * -1;
         }
+        int lastDigit = 0;
+        // while loop when the number is more than 0
+        while (number > 0) {
+
+            // create a new variable and make it equal to the remainder of the number / 10
+            lastDigit = number % 10;
+            // make number equal 
+            number = number / 10;
+            if (lastDigit % 2 == 0) {
+                return false;
+            }
+        }
+
+        return true;
+
     }
 
     /**
@@ -23,12 +39,22 @@ public class A7Q8 {
      */
     public static void main(String[] args) {
 
-        Scanner in = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
-        int number = in.nextInt();
+        // create object
+        A7Q8 method = new A7Q8();
+        // ask the user to input a number
+        System.out.println("Please enter a number");
+        // assign what the user entered a variable
+        int number = input.nextInt();
+        // assign the method to a boolean
+        boolean allOdd = method.allOddDigits(number);
 
-        A7Q8 test = new A7Q8();
-
-
+        if (allOdd == true) {
+            System.out.println("The numeber consists of all odd integers");
+        }
+        if (allOdd == false) {
+            System.out.println("The number does not consist of all odd3 integers");
+        }
     }
 }
