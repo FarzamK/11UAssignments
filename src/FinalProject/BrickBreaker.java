@@ -10,6 +10,7 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Rectangle;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
@@ -27,7 +28,7 @@ public class BrickBreaker extends JComponent {
     static final int HEIGHT = 600;
     
     //Title of the window
-    String title = " Brick Breaker";
+    String title = "Brick Breaker";
 
     // sets the framerate and delay for our game
     // you just need to select an approproate framerate
@@ -36,10 +37,20 @@ public class BrickBreaker extends JComponent {
 
 
     // YOUR GAME VARIABLES WOULD GO HERE
+    // create the paddle's height and width
     int paddleHeight = 25;
     int paddleWidth = 100;
+    // size of the ball
+    int ballSize = 30;
+    // 
+    Rectangle ball = new Rectangle(WIDTH / 2 - ballSize / 2, HEIGHT / 2 - ballSize / 2, ballSize, ballSize);
+    // variable for the direction of the ball
+    int ballXDirection = 1;
+    int ballYDirection = -1;
+    // speed of the ball
+    int ballSpeed = 5;
     
-
+    int playerScore = 0;
     // GAME VARIABLES END HERE    
 
     
@@ -79,7 +90,12 @@ public class BrickBreaker extends JComponent {
         g.clearRect(0, 0, WIDTH, HEIGHT);
 
         // GAME DRAWING GOES HERE
-        
+        // set the color to black
+        g.setColor(Color.BLACK);
+        // fill the background with black rectangle
+        g.fillRect(0, 0, WIDTH, HEIGHT);
+        // change color to red
+        g.setColor(Color.RED);
         
         // GAME DRAWING ENDS HERE
     }
