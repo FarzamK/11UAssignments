@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package FinalProject;
 
 import java.awt.Dimension;
@@ -26,37 +25,35 @@ public class BrickBreaker extends JComponent {
     // Height and Width of our game
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
-    
     //Title of the window
     String title = "Brick Breaker";
-
     // sets the framerate and delay for our game
     // you just need to select an approproate framerate
     long desiredFPS = 60;
     long desiredTime = (1000) / desiredFPS;
-
-
     // YOUR GAME VARIABLES WOULD GO HERE
     // create the paddle's height and width
-    int paddleHeight = 25;
+    int paddleHeight = 15;
     int paddleWidth = 100;
-    // size of the ball
-    int ballSize = 30;
-    // 
+    Rectangle paddle = new Rectangle(WIDTH / 2 - paddleWidth / 2, 550, paddleWidth, paddleHeight);
+    int paddleSpeed = 7;
+    int playerScore = 0;
+    // variables to make the paddle move
+    boolean left = false;
+    boolean right = false;
+    // the ball
+    int ballSize = 20;
     Rectangle ball = new Rectangle(WIDTH / 2 - ballSize / 2, HEIGHT / 2 - ballSize / 2, ballSize, ballSize);
     // variable for the direction of the ball
     int ballXDirection = 1;
     int ballYDirection = -1;
     // speed of the ball
     int ballSpeed = 5;
-    
-    int playerScore = 0;
-    // GAME VARIABLES END HERE    
 
-    
+    // GAME VARIABLES END HERE    
     // Constructor to create the Frame and place the panel in
     // You will learn more about this in Grade 12 :)
-    public BrickBreaker(){
+    public BrickBreaker() {
         // creates a windows to show my game
         JFrame frame = new JFrame(title);
 
@@ -71,16 +68,16 @@ public class BrickBreaker extends JComponent {
         frame.pack();
         // shows the window to the user
         frame.setVisible(true);
-        
+
         // add listeners for keyboard and mouse
         frame.addKeyListener(new Keyboard());
         Mouse m = new Mouse();
-        
+
         this.addMouseMotionListener(m);
         this.addMouseWheelListener(m);
         this.addMouseListener(m);
     }
-    
+
     // drawing of the game happens in here
     // we use the Graphics object, g, to perform the drawing
     // NOTE: This is already double buffered!(helps with framerate/speed)
@@ -96,17 +93,18 @@ public class BrickBreaker extends JComponent {
         g.fillRect(0, 0, WIDTH, HEIGHT);
         // change color to red
         g.setColor(Color.RED);
-        
+        g.fillRoundRect(paddle.x, paddle.y, paddle.width, paddle.height, 20, 20);
+
+        // change color to yellow
+        g.setColor(Color.YELLOW);
+        g.fillOval(ball.x, ball.y, ball.width, ball.height);
         // GAME DRAWING ENDS HERE
     }
 
-
     // This method is used to do any pre-setup you might need to do
     // This is run before the game loop begins!
-    public void  preSetup(){
-       // Any of your pre setup before the loop starts should go here
-
-       
+    public void preSetup() {
+        // Any of your pre setup before the loop starts should go here
     }
 
     // The main game loop
@@ -128,8 +126,42 @@ public class BrickBreaker extends JComponent {
 
             // all your game rules and move is done in here
             // GAME LOGIC STARTS HERE 
-            
-            
+                        // move the ball
+            ball.x = ball.x + ballXDirection * ballSpeed;
+            ball.y = ball.y + ballYDirection * ballSpeed;
+            // get ball to bouce off floor
+            // bottom of ball hit height of screen
+            if (ball.y + ball.height >= HEIGHT) {
+                // change y direction
+                ballYDirection = ballYDirection * -1;
+            }
+            // top of ball hit top of the screen
+            if (ball.y <= 0) {
+                ballYDirection = ballYDirection * -1;
+            }
+                        // ball hits left side of the screen
+            if (ball.x < 0) {
+                
+                ball.x = WIDTH / 2 - ball.width / 2;
+                ball.y = HEIGHT / 2 - ball.height / 2;
+                ballXDirection = ballXDirection * -1;
+            }
+
+            // ball hitting right side of the screen
+            if (ball.x + ball.width > WIDTH) {
+               
+                ball.x = WIDTH / 2 - ball.width / 2;
+                ball.y = HEIGHT / 2 - ball.height / 2;
+                ballXDirection = ballXDirection * -1;
+
+            }
+            // move the paddle
+            if (left && paddle.x > 0) {
+                paddle.x = paddle.x - paddleSpeed;
+            } else if (right && paddle.x + paddle.height < WIDTH - paddleWidth + 10) {
+                paddle.x = paddle.x + paddleSpeed;
+            }
+            // move the ball
             // GAME LOGIC ENDS HERE 
             // update the drawing (calls paintComponent)
             repaint();
@@ -150,60 +182,70 @@ public class BrickBreaker extends JComponent {
         }
     }
 
-    
-
     // Used to implement any of the Mouse Actions
     private class Mouse extends MouseAdapter {
         // if a mouse button has been pressed down
+
         @Override
-        public void mousePressed(MouseEvent e){
-            
+        public void mousePressed(MouseEvent e) {
         }
-        
+
         // if a mouse button has been released
         @Override
-        public void mouseReleased(MouseEvent e){
-            
+        public void mouseReleased(MouseEvent e) {
         }
-        
+
         // if the scroll wheel has been moved
         @Override
-        public void mouseWheelMoved(MouseWheelEvent e){
-            
+        public void mouseWheelMoved(MouseWheelEvent e) {
         }
 
         // if the mouse has moved positions
         @Override
-        public void mouseMoved(MouseEvent e){
-            
+        public void mouseMoved(MouseEvent e) {
         }
     }
-    
+
     // Used to implements any of the Keyboard Actions
-    private class Keyboard extends KeyAdapter{
+    private class Keyboard extends KeyAdapter {
         // if a key has been pressed down
+
         @Override
-        public void keyPressed(KeyEvent e){
-            
+        public void keyPressed(KeyEvent e) {
+            // store the key being pressed
+            int key = e.getKeyCode();
+            // determine which key it is 
+            if (key == KeyEvent.VK_A) {
+                left = true;
+            } else if (key == KeyEvent.VK_D) {
+                right = true;
+            }
         }
-        
         // if a key has been released
+
         @Override
-        public void keyReleased(KeyEvent e){
-            
+        public void keyReleased(KeyEvent e) {            
+            // store the key being pressed
+            int key = e.getKeyCode();
+            // determine which key it is 
+            if (key == KeyEvent.VK_A) {
+                left = false;
+            } else if (key == KeyEvent.VK_D) {
+                right = false;
+            }
         }
+
+        
     }
-    
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // creates an instance of my game
         BrickBreaker game = new BrickBreaker();
-                
+
         // starts the game loop
         game.run();
     }
 }
-
