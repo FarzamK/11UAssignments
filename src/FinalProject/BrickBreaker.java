@@ -129,29 +129,26 @@ public class BrickBreaker extends JComponent {
                         // move the ball
             ball.x = ball.x + ballXDirection * ballSpeed;
             ball.y = ball.y + ballYDirection * ballSpeed;
-            // get ball to bouce off floor
-            // bottom of ball hit height of screen
-            if (ball.y + ball.height >= HEIGHT) {
-                // change y direction
+            // make the ball hit the paddle
+            if (ball.intersects(paddle)) {
                 ballYDirection = ballYDirection * -1;
             }
+            // bottom of ball hit height of screen
+            if (ball.y + ball.height >= HEIGHT) {
+                done = true;
+            }
+            
             // top of ball hit top of the screen
             if (ball.y <= 0) {
                 ballYDirection = ballYDirection * -1;
             }
-                        // ball hits left side of the screen
+            // ball hits left side of the screen
             if (ball.x < 0) {
-                
-                ball.x = WIDTH / 2 - ball.width / 2;
-                ball.y = HEIGHT / 2 - ball.height / 2;
                 ballXDirection = ballXDirection * -1;
             }
 
             // ball hitting right side of the screen
             if (ball.x + ball.width > WIDTH) {
-               
-                ball.x = WIDTH / 2 - ball.width / 2;
-                ball.y = HEIGHT / 2 - ball.height / 2;
                 ballXDirection = ballXDirection * -1;
 
             }
@@ -205,7 +202,7 @@ public class BrickBreaker extends JComponent {
         public void mouseMoved(MouseEvent e) {
         }
     }
-
+    
     // Used to implements any of the Keyboard Actions
     private class Keyboard extends KeyAdapter {
         // if a key has been pressed down
@@ -215,9 +212,9 @@ public class BrickBreaker extends JComponent {
             // store the key being pressed
             int key = e.getKeyCode();
             // determine which key it is 
-            if (key == KeyEvent.VK_A) {
+            if (key == KeyEvent.VK_LEFT) {
                 left = true;
-            } else if (key == KeyEvent.VK_D) {
+            } else if (key == KeyEvent.VK_RIGHT) {
                 right = true;
             }
         }
@@ -228,9 +225,9 @@ public class BrickBreaker extends JComponent {
             // store the key being pressed
             int key = e.getKeyCode();
             // determine which key it is 
-            if (key == KeyEvent.VK_A) {
+            if (key == KeyEvent.VK_LEFT) {
                 left = false;
-            } else if (key == KeyEvent.VK_D) {
+            } else if (key == KeyEvent.VK_RIGHT) {
                 right = false;
             }
         }
