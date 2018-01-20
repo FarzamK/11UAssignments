@@ -122,49 +122,43 @@ public class BrickBreaker extends JComponent {
     public void preSetup() {
         // Any of your pre setup before the loop starts should go here
         bricks[0] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[1] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[2] = new Rectangle(100, 0, WIDTH / 8, 15);
-        bricks[3] = new Rectangle(200, 0, WIDTH / 8, 15);
-        bricks[4] = new Rectangle(300, 0, WIDTH / 8, 15);
-        bricks[5] = new Rectangle(400, 0, WIDTH / 8, 15);
-        bricks[6] = new Rectangle(500, 0, WIDTH / 8, 15);
-        bricks[7] = new Rectangle(600, 0, WIDTH / 8, 15);
-        bricks[8] = new Rectangle(700, 0, WIDTH / 8, 15);
-        bricks[9] = new Rectangle(15, 0, 15, WIDTH / 8);
-        bricks[10] = new Rectangle(31, 54, WIDTH / 8, 15);
-        bricks[11] = new Rectangle(534, 123, WIDTH / 8, 15);
-        bricks[12] = new Rectangle(423, 65, WIDTH / 8, 15);
-        bricks[13] = new Rectangle(426, 423, WIDTH / 8, 15);
-        bricks[14] = new Rectangle(76, 54, WIDTH / 8, 15);
-        bricks[15] = new Rectangle(78, 429, WIDTH / 8, 15);
-        bricks[16] = new Rectangle(54, 47, WIDTH / 8, 15);
-        bricks[17] = new Rectangle(87, 46, WIDTH / 8, 15);
-        bricks[18] = new Rectangle(666, 478, WIDTH / 8, 15);
-        bricks[19] = new Rectangle(578, 467, WIDTH / 8, 15);
-        bricks[20] = new Rectangle(6, 9, WIDTH / 8, 15);
-        bricks[21] = new Rectangle(645, 89, WIDTH / 8, 15);
-        bricks[22] = new Rectangle(76, 8, WIDTH / 8, 15);
-        bricks[23] = new Rectangle(76, 56, WIDTH / 8, 15);
-        bricks[24] = new Rectangle(785, 64, WIDTH / 8, 15);
-        bricks[25] = new Rectangle(78, 53, WIDTH / 8, 15);
-        bricks[26] = new Rectangle(86, 35, WIDTH / 8, 15);
-        bricks[27] = new Rectangle(44, 786, WIDTH / 8, 15);
-        bricks[28] = new Rectangle(8, 57, WIDTH / 8, 15);
-        bricks[29] = new Rectangle(76, 7, WIDTH / 8, 15);
-        bricks[31] = new Rectangle(86, 44, WIDTH / 8, 15);
-        bricks[32] = new Rectangle(89, 98, WIDTH / 8, 15);
-        bricks[33] = new Rectangle(54, 0, WIDTH / 8, 15);
+        bricks[1] = new Rectangle(100, 0, WIDTH / 8, 15);
+        bricks[2] = new Rectangle(200, 0, WIDTH / 8, 15);
+        bricks[3] = new Rectangle(300, 0, WIDTH / 8, 15);
+        bricks[4] = new Rectangle(400, 0, WIDTH / 8, 15);
+        bricks[5] = new Rectangle(500, 0, WIDTH / 8, 15);
+        bricks[6] = new Rectangle(600, 0, WIDTH / 8, 15);
+        bricks[7] = new Rectangle(700, 0, WIDTH / 8, 15);
+        bricks[8] = new Rectangle(0, 0, 15, 75);
+        bricks[9] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[10] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[11] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[12] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[13] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[14] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[15] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[16] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[17] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[18] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[19] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[20] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[21] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[22] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[23] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[24] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[25] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[26] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[27] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[28] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[29] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[30] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[31] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[32] = new Rectangle(0, 0, WIDTH / 8, 15);
+        bricks[33] = new Rectangle(0, 0, WIDTH / 8, 15);
         bricks[34] = new Rectangle(0, 0, WIDTH / 8, 15);
         bricks[35] = new Rectangle(0, 0, WIDTH / 8, 15);
         bricks[36] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[37] = new Rectangle(0, 0, WIDTH / 8, 15);
-        
-
-        
-
-        
-        
-        
+        bricks[37] = new Rectangle(0, 0, WIDTH / 8, 15);       
     }
 
     // The main game loop
