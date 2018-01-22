@@ -104,7 +104,7 @@ public class BrickBreaker extends JComponent {
         g.fillOval(ball.x, ball.y, ball.width, ball.height);
 
         // draw bricks
-        g.setColor(Color.BLUE);
+        g.setColor(Color.PINK);
         for (int i = 0; i < bricks.length; i++) {
             if(ball.intersects(bricks[i])){
                 bricks[i].x = 1000;
