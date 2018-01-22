@@ -49,6 +49,8 @@ public class BrickBreaker extends JComponent {
     int ballYDirection = -1;
     // speed of the ball
     int ballSpeed = 5;
+    int ballDX = 5;
+    int ballDY = 5;
     // create the bricks to break
     Rectangle[] bricks = new Rectangle[38];
 
@@ -104,16 +106,27 @@ public class BrickBreaker extends JComponent {
         // draw bricks
         g.setColor(Color.BLUE);
         for (int i = 0; i < bricks.length; i++) {
+            if(ball.intersects(bricks[i])){
+                bricks[i].x = 1000;
+            }else{
             g.fillRect(bricks[i].x, bricks[i].y, bricks[i].width, bricks[i].height);
-        }
-            g.setColor(Color.YELLOW);
-        for (int x = 0; x < bricks.length; x++) {
             
-            g.drawRect(bricks[x].x, bricks[x].y, bricks[x].width, bricks[x].height);
-            // GAME DRAWING ENDS HERE
+        }
+//            g.setColor(Color.YELLOW);
+//        for (int x = 0; x < bricks.length; x++) {
+//            if(bricks[x].x == 1000){
+//                
+//            }else{
+//            g.drawRect(bricks[x].x, bricks[x].y, bricks[x].width, bricks[x].height);
+             
+        }
         }
     
-    }
+    
+            // GAME DRAWING ENDS HERE
+        
+    
+    
 
         // This method is used to do any pre-setup you might need to do
         // This is run before the game loop begins!
@@ -121,44 +134,44 @@ public class BrickBreaker extends JComponent {
 
     public void preSetup() {
         // Any of your pre setup before the loop starts should go here
-        bricks[0] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[1] = new Rectangle(100, 0, WIDTH / 8, 15);
-        bricks[2] = new Rectangle(200, 0, WIDTH / 8, 15);
-        bricks[3] = new Rectangle(300, 0, WIDTH / 8, 15);
-        bricks[4] = new Rectangle(400, 0, WIDTH / 8, 15);
-        bricks[5] = new Rectangle(500, 0, WIDTH / 8, 15);
-        bricks[6] = new Rectangle(600, 0, WIDTH / 8, 15);
-        bricks[7] = new Rectangle(700, 0, WIDTH / 8, 15);
-        bricks[8] = new Rectangle(0, 0, 15, 75);
-        bricks[9] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[10] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[11] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[12] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[13] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[14] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[15] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[16] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[17] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[18] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[19] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[20] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[21] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[22] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[23] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[24] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[25] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[26] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[27] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[28] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[29] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[30] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[31] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[32] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[33] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[34] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[35] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[36] = new Rectangle(0, 0, WIDTH / 8, 15);
-        bricks[37] = new Rectangle(0, 0, WIDTH / 8, 15);       
+        bricks[0] = new Rectangle(105, 0, WIDTH / 8 - 5, 25);
+        bricks[1] = new Rectangle(205, 0, WIDTH / 8 - 3, 25);
+        bricks[2] = new Rectangle(305, 0, WIDTH / 8 - 5, 25);
+        bricks[3] = new Rectangle(405, 0, WIDTH / 8 - 5, 25);
+        bricks[4] = new Rectangle(505, 0, WIDTH / 8 - 5, 25);
+        bricks[5] = new Rectangle(605, 0, WIDTH / 8 - 5, 25);
+        bricks[6] = new Rectangle(705, 0, WIDTH / 8 - 5, 25);
+        bricks[7] = new Rectangle(0, 30, 25, 75);
+        bricks[8] = new Rectangle(0, 0, WIDTH / 8 - 5 , 25);
+        bricks[9] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[10] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[11] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[12] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[13] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[14] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[15] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[16] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[17] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[18] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[19] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[20] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[21] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[22] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[23] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[24] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[25] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[26] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[27] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[28] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[29] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[30] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[31] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[32] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[33] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[34] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[35] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[36] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[37] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);       
     }
 
     // The main game loop
@@ -211,6 +224,14 @@ public class BrickBreaker extends JComponent {
                 paddle.x = paddle.x - paddleSpeed;
             } else if (right && paddle.x + paddle.height < WIDTH - paddleWidth + 10) {
                 paddle.x = paddle.x + paddleSpeed;
+            }
+//          
+            // hit detection
+            for (int x = 0; x < bricks.length; x++){
+            if (ball.intersects(bricks[x])) {
+                ballXDirection = ballXDirection * 1;
+                ballYDirection = ballYDirection * -1;
+            }
             }
             // move the ball
             // GAME LOGIC ENDS HERE 
