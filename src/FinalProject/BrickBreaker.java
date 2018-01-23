@@ -9,6 +9,7 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Rectangle;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -35,7 +36,7 @@ public class BrickBreaker extends JComponent {
     // create the paddle's height and width
     int paddleHeight = 15;
     int paddleWidth = 100;
-    Rectangle paddle = new Rectangle(WIDTH / 2 - paddleWidth / 2, 550, paddleWidth, paddleHeight);
+    Rectangle paddle = new Rectangle(WIDTH / 2 - paddleWidth - 150 / 2, 550, paddleWidth, paddleHeight);
     int paddleSpeed = 7;
     int playerScore = 0;
     // variables to make the paddle move
@@ -51,6 +52,11 @@ public class BrickBreaker extends JComponent {
     int ballSpeed = 5;
     int ballDX = 5;
     int ballDY = 5;
+    
+    boolean youWin = false;
+    boolean gameOver = false;
+    
+    Font biggerFont = new Font("calibri", Font.BOLD, 40);
     // create the bricks to break
     Rectangle[] bricks = new Rectangle[50];
 
@@ -110,10 +116,21 @@ public class BrickBreaker extends JComponent {
                 bricks[i].x = 1000;
             }else{
             g.fillRect(bricks[i].x, bricks[i].y, bricks[i].width, bricks[i].height);
+            }
+        }
+            g.setColor(Color.GREEN);
+            if (youWin == true){
+                g.drawString("YOU WIN", WIDTH / 2 - 175, HEIGHT / 2);
+            }
+            g.setColor(Color.RED);
+            if(gameOver == true){
+                g.drawString("GAME OVER", WIDTH / 2 - 175, HEIGHT / 2);
+                
+            }
             
-        }
+        
             // GAME DRAWING ENDS HERE
-        }
+        
     }
     
     
@@ -124,22 +141,22 @@ public class BrickBreaker extends JComponent {
 
     public void preSetup() {
         // Any of your pre setup before the loop starts should go here
-        bricks[0] = new Rectangle(100 + 1, 10, WIDTH / 8 - 4, 25);
-        bricks[1] = new Rectangle(200 + 3, 10, WIDTH / 8 - 2, 25);
-        bricks[2] = new Rectangle(300 + 5, 10, WIDTH / 8 - 4, 25);
-        bricks[3] = new Rectangle(400 + 5, 10, WIDTH / 8 - 4, 25);
-        bricks[4] = new Rectangle(500 + 5, 10, WIDTH / 8 - 4, 25);
-        bricks[5] = new Rectangle(600 + 5, 10, WIDTH / 8 - 4, 25);
-        bricks[6] = new Rectangle(700 + 5, 10, WIDTH / 8 - 4, 25);
-        bricks[7] = new Rectangle(0, 10, WIDTH / 8 - 4, 25);
-        bricks[8] = new Rectangle(0, 40, WIDTH / 8 - 4 , 25);
-        bricks[9] = new Rectangle(100 + 1, 40, WIDTH / 8 - 4, 25);
-        bricks[10] = new Rectangle(200 + 3, 40, WIDTH / 8 - 2, 25);
-        bricks[11] = new Rectangle(300 + 5, 40, WIDTH / 8 - 4, 25);
-        bricks[12] = new Rectangle(400 + 5, 40, WIDTH / 8 - 4, 25);
-        bricks[13] = new Rectangle(500 + 5, 40, WIDTH / 8 - 4, 25);
-        bricks[14] = new Rectangle(600 + 5, 40, WIDTH / 8 - 4, 25);
-        bricks[15] = new Rectangle(700 + 5, 40, WIDTH / 8 - 4, 25);
+        bricks[0] = new Rectangle(100 + 1, 10 + 10, WIDTH / 8 - 4, 25);
+        bricks[1] = new Rectangle(200 + 3, 10 + 10, WIDTH / 8 - 2, 25);
+        bricks[2] = new Rectangle(300 + 5, 10 + 10, WIDTH / 8 - 4, 25);
+        bricks[3] = new Rectangle(400 + 5, 10 + 10, WIDTH / 8 - 4, 25);
+        bricks[4] = new Rectangle(500 + 5, 10 + 10, WIDTH / 8 - 4, 25);
+        bricks[5] = new Rectangle(600 + 5, 10 + 10, WIDTH / 8 - 4, 25);
+        bricks[6] = new Rectangle(700 + 5, 10 + 10, WIDTH / 8 - 4, 25);
+        bricks[7] = new Rectangle(0, 10 + 10, WIDTH / 8 - 4, 25);
+        bricks[8] = new Rectangle(0, 40 + 10, WIDTH / 8 - 4 , 25);
+        bricks[9] = new Rectangle(100 + 1, 40 + 10, WIDTH / 8 - 4, 25);
+        bricks[10] = new Rectangle(200 + 3, 40 + 10, WIDTH / 8 - 2, 25);
+        bricks[11] = new Rectangle(300 + 5, 40 + 10, WIDTH / 8 - 4, 25);
+        bricks[12] = new Rectangle(400 + 5, 40 + 10, WIDTH / 8 - 4, 25);
+        bricks[13] = new Rectangle(500 + 5, 40 + 10, WIDTH / 8 - 4, 25);
+        bricks[14] = new Rectangle(600 + 5, 40 + 10, WIDTH / 8 - 4, 25);
+        bricks[15] = new Rectangle(700 + 5, 40 +10, WIDTH / 8 - 4, 25);
         bricks[16] = new Rectangle(1000, 1000, 25, 50);
         bricks[17] = new Rectangle(1000, 1000, 25, 50);
         bricks[18] = new Rectangle(0, 170, WIDTH / 8 - 4, 25);
@@ -208,11 +225,14 @@ public class BrickBreaker extends JComponent {
                 ballYDirection = ballYDirection * -1;
             }
             // bottom of ball hit height of screen
-            if (ball.y + ball.height >= HEIGHT) {
-                
+            
+                if(ball.y >= HEIGHT){
+                    gameOver = true;
+                }
+            
+            if (gameOver == true){
                 done = true;
             }
-
             // top of ball hit top of the screen
             if (ball.y <= 0) {
                 ballYDirection = ballYDirection * -1;
@@ -240,6 +260,18 @@ public class BrickBreaker extends JComponent {
                 ballXDirection = ballXDirection * 1;
                 ballYDirection = ballYDirection * -1;
             }
+            }
+            
+            // When you win the game 
+            for (int x = 0; x < bricks.length; x++){
+                if(bricks[x].x <= WIDTH){
+                    youWin = false;
+                    
+                    
+                }
+            }
+            if(youWin == true){
+                done = true;
             }
             
             // GAME LOGIC ENDS HERE 
