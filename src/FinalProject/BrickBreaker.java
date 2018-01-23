@@ -52,7 +52,7 @@ public class BrickBreaker extends JComponent {
     int ballDX = 5;
     int ballDY = 5;
     // create the bricks to break
-    Rectangle[] bricks = new Rectangle[44];
+    Rectangle[] bricks = new Rectangle[50];
 
     // GAME VARIABLES END HERE    
     // Constructor to create the Frame and place the panel in
@@ -162,12 +162,19 @@ public class BrickBreaker extends JComponent {
         bricks[35] = new Rectangle(100 + 1, 110, WIDTH / 8 - 4, 25);
         bricks[36] = new Rectangle(200 + 3, 110, WIDTH / 8 - 2, 25);
         bricks[37] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
-        bricks[38] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
-        bricks[39] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
-        bricks[40] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
-        bricks[41] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
-        bricks[42] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
-        bricks[43] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
+        bricks[38] = new Rectangle(400 + 5, 110, WIDTH / 8 - 4, 25);
+        bricks[39] = new Rectangle(500 + 5, 110, WIDTH / 8 - 4, 25);
+        bricks[40] = new Rectangle(600 + 5, 110, WIDTH / 8 - 4, 25);
+        bricks[41] = new Rectangle(700 + 5, 110, WIDTH / 8 - 4, 25);
+        bricks[42] = new Rectangle(0, 80, WIDTH / 8 - 4, 25);
+        bricks[43] = new Rectangle(100 + 1, 80, WIDTH / 8 - 4, 25);
+        bricks[44] = new Rectangle(200 + 3, 80, WIDTH / 8 - 2, 25);
+        bricks[45] = new Rectangle(300 + 5, 80, WIDTH / 8 - 4, 25);
+        bricks[46] = new Rectangle(400 + 5, 80, WIDTH / 8 - 4, 25);
+        bricks[47] = new Rectangle(500 + 5, 80, WIDTH / 8 - 4, 25);
+        bricks[48] = new Rectangle(600 + 5, 80, WIDTH / 8 - 4, 25);
+        bricks[49] = new Rectangle(700 + 5, 80, WIDTH / 8 - 4, 25);
+        
         
         
         
