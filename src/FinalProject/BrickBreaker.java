@@ -45,8 +45,8 @@ public class BrickBreaker extends JComponent {
     int ballSize = 20;
     Rectangle ball = new Rectangle(WIDTH / 2 - ballSize / 2, HEIGHT / 2 - ballSize / 2, ballSize, ballSize);
     // variable for the direction of the ball
-    int ballXDirection = 1;
-    int ballYDirection = -1;
+    int ballXDirection = -1;
+    int ballYDirection = 1;
     // speed of the ball
     int ballSpeed = 5;
     int ballDX = 5;
@@ -103,7 +103,7 @@ public class BrickBreaker extends JComponent {
         g.setColor(Color.YELLOW);
         g.fillOval(ball.x, ball.y, ball.width, ball.height);
 
-        // draw bricks
+        // draw bricks and when the ball hits the bricks, make them disappear
         g.setColor(Color.PINK);
         for (int i = 0; i < bricks.length; i++) {
             if(ball.intersects(bricks[i])){
@@ -112,19 +112,9 @@ public class BrickBreaker extends JComponent {
             g.fillRect(bricks[i].x, bricks[i].y, bricks[i].width, bricks[i].height);
             
         }
-//            g.setColor(Color.YELLOW);
-//        for (int x = 0; x < bricks.length; x++) {
-//            if(bricks[x].x == 1000){
-//                
-//            }else{
-//            g.drawRect(bricks[x].x, bricks[x].y, bricks[x].width, bricks[x].height);
-             
-        }
-        }
-    
-    
             // GAME DRAWING ENDS HERE
-        
+        }
+    }
     
     
 
@@ -134,33 +124,33 @@ public class BrickBreaker extends JComponent {
 
     public void preSetup() {
         // Any of your pre setup before the loop starts should go here
-        bricks[0] = new Rectangle(105, 0, WIDTH / 8 - 5, 25);
-        bricks[1] = new Rectangle(205, 0, WIDTH / 8 - 3, 25);
-        bricks[2] = new Rectangle(305, 0, WIDTH / 8 - 5, 25);
-        bricks[3] = new Rectangle(405, 0, WIDTH / 8 - 5, 25);
-        bricks[4] = new Rectangle(505, 0, WIDTH / 8 - 5, 25);
-        bricks[5] = new Rectangle(605, 0, WIDTH / 8 - 5, 25);
-        bricks[6] = new Rectangle(705, 0, WIDTH / 8 - 5, 25);
-        bricks[7] = new Rectangle(0, 30, 25, 75);
-        bricks[8] = new Rectangle(0, 0, WIDTH / 8 - 5 , 25);
-        bricks[9] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[10] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[11] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[12] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[13] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[14] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[15] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[16] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[17] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[18] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[19] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[20] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[21] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[22] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[23] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[24] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[25] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[26] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
+        bricks[0] = new Rectangle(100 + 1, 10, WIDTH / 8 - 4, 25);
+        bricks[1] = new Rectangle(200 + 3, 10, WIDTH / 8 - 2, 25);
+        bricks[2] = new Rectangle(300 + 5, 10, WIDTH / 8 - 4, 25);
+        bricks[3] = new Rectangle(400 + 5, 10, WIDTH / 8 - 4, 25);
+        bricks[4] = new Rectangle(500 + 5, 10, WIDTH / 8 - 4, 25);
+        bricks[5] = new Rectangle(600 + 5, 10, WIDTH / 8 - 4, 25);
+        bricks[6] = new Rectangle(700 + 5, 10, WIDTH / 8 - 4, 25);
+        bricks[7] = new Rectangle(0, 10, WIDTH / 8 - 4, 25);
+        bricks[8] = new Rectangle(0, 40, WIDTH / 8 - 4 , 25);
+        bricks[9] = new Rectangle(100 + 1, 40, WIDTH / 8 - 4, 25);
+        bricks[10] = new Rectangle(200 + 3, 40, WIDTH / 8 - 2, 25);
+        bricks[11] = new Rectangle(300 + 5, 40, WIDTH / 8 - 4, 25);
+        bricks[12] = new Rectangle(400 + 5, 40, WIDTH / 8 - 4, 25);
+        bricks[13] = new Rectangle(500 + 5, 40, WIDTH / 8 - 4, 25);
+        bricks[14] = new Rectangle(600 + 5, 40, WIDTH / 8 - 4, 25);
+        bricks[15] = new Rectangle(700 + 5, 40, WIDTH / 8 - 4, 25);
+        bricks[16] = new Rectangle(1000, 1000, 25, 50);
+        bricks[17] = new Rectangle(1000, 1000, 25, 50);
+        bricks[18] = new Rectangle(0, 170, WIDTH / 8 - 4, 25);
+        bricks[19] = new Rectangle(100 + 1, 170, WIDTH / 8 - 4, 25);
+        bricks[20] = new Rectangle(200 + 3, 170, WIDTH / 8 - 2, 25);
+        bricks[21] = new Rectangle(300 + 5, 170, WIDTH / 8 - 4, 25);
+        bricks[22] = new Rectangle(400 + 5, 170, WIDTH / 8 - 4, 25);
+        bricks[23] = new Rectangle(500 + 5, 170, WIDTH / 8 - 4, 25);
+        bricks[24] = new Rectangle(600 + 5, 170, WIDTH / 8 - 4, 25);
+        bricks[25] = new Rectangle(700 + 5, 170, WIDTH / 8 - 4, 25);
+        bricks[26] = new Rectangle(0, 70, WIDTH / 8 - 5, 25);
         bricks[27] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
         bricks[28] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
         bricks[29] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
@@ -193,6 +183,7 @@ public class BrickBreaker extends JComponent {
 
             // all your game rules and move is done in here
             // GAME LOGIC STARTS HERE 
+            
             // move the ball
             ball.x = ball.x + ballXDirection * ballSpeed;
             ball.y = ball.y + ballYDirection * ballSpeed;
@@ -202,6 +193,7 @@ public class BrickBreaker extends JComponent {
             }
             // bottom of ball hit height of screen
             if (ball.y + ball.height >= HEIGHT) {
+                
                 done = true;
             }
 
@@ -225,7 +217,7 @@ public class BrickBreaker extends JComponent {
             } else if (right && paddle.x + paddle.height < WIDTH - paddleWidth + 10) {
                 paddle.x = paddle.x + paddleSpeed;
             }
-//          
+          
             // hit detection
             for (int x = 0; x < bricks.length; x++){
             if (ball.intersects(bricks[x])) {
@@ -233,7 +225,7 @@ public class BrickBreaker extends JComponent {
                 ballYDirection = ballYDirection * -1;
             }
             }
-            // move the ball
+            
             // GAME LOGIC ENDS HERE 
             // update the drawing (calls paintComponent)
             repaint();
