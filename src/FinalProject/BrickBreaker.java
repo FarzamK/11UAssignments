@@ -52,7 +52,7 @@ public class BrickBreaker extends JComponent {
     int ballDX = 5;
     int ballDY = 5;
     // create the bricks to break
-    Rectangle[] bricks = new Rectangle[38];
+    Rectangle[] bricks = new Rectangle[44];
 
     // GAME VARIABLES END HERE    
     // Constructor to create the Frame and place the panel in
@@ -150,18 +150,27 @@ public class BrickBreaker extends JComponent {
         bricks[23] = new Rectangle(500 + 5, 170, WIDTH / 8 - 4, 25);
         bricks[24] = new Rectangle(600 + 5, 170, WIDTH / 8 - 4, 25);
         bricks[25] = new Rectangle(700 + 5, 170, WIDTH / 8 - 4, 25);
-        bricks[26] = new Rectangle(0, 70, WIDTH / 8 - 5, 25);
-        bricks[27] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[28] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[29] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[30] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[31] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[32] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[33] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[34] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[35] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[36] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);
-        bricks[37] = new Rectangle(0, 0, WIDTH / 8 - 5, 25);       
+        bricks[26] = new Rectangle(0, 140, WIDTH / 8 - 4, 25);
+        bricks[27] = new Rectangle(100 + 1, 140, WIDTH / 8 - 4, 25);
+        bricks[28] = new Rectangle(200 + 3, 140, WIDTH / 8 - 2, 25);
+        bricks[29] = new Rectangle(300 + 5, 140, WIDTH / 8 - 4, 25);
+        bricks[30] = new Rectangle(400 + 5, 140, WIDTH / 8 - 4, 25);
+        bricks[31] = new Rectangle(500 + 5, 140, WIDTH / 8 - 4, 25);
+        bricks[32] = new Rectangle(600 + 5, 140, WIDTH / 8 - 4, 25);
+        bricks[33] = new Rectangle(700 + 5, 140, WIDTH / 8 - 4, 25);
+        bricks[34] = new Rectangle(0, 110, WIDTH / 8 - 4, 25);
+        bricks[35] = new Rectangle(100 + 1, 110, WIDTH / 8 - 4, 25);
+        bricks[36] = new Rectangle(200 + 3, 110, WIDTH / 8 - 2, 25);
+        bricks[37] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
+        bricks[38] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
+        bricks[39] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
+        bricks[40] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
+        bricks[41] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
+        bricks[42] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
+        bricks[43] = new Rectangle(300 + 5, 110, WIDTH / 8 - 4, 25);
+        
+        
+        
     }
 
     // The main game loop
