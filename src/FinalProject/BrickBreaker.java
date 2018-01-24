@@ -59,10 +59,12 @@ public class BrickBreaker extends JComponent {
     boolean gameBeingPlayed = true;
     boolean gameOverScreen = false;
     
+    int score = 0;
+    
     
     
     Font text = new Font("arial", Font.BOLD, 40);
-    Font text2 = new Font("arial", Font.BOLD, 42);
+    Font scoreText = new Font("arial", Font.BOLD, 20);
     // create the bricks to break
     Rectangle[] bricks = new Rectangle[50];
 
@@ -109,6 +111,7 @@ public class BrickBreaker extends JComponent {
         g.fillRect(0, 0, WIDTH, HEIGHT);
         // change color to red
         g.setColor(Color.RED);
+        // create the paddle
         g.fillRoundRect(paddle.x, paddle.y, paddle.width, paddle.height, 20, 20);
 
         // change color to yellow
@@ -126,16 +129,20 @@ public class BrickBreaker extends JComponent {
         }
             g.setFont(text);
             g.setColor(Color.GREEN);
-            for(int i = 0; i < bricks.length; i++){
-            if (youWin == true){
-                g.drawString("YOU WIN", WIDTH / 2 - 145, HEIGHT / 2);
+            
+            if (bricks[41].x >= WIDTH){
+                g.drawString("YOU WIN", WIDTH / 2 - 115, HEIGHT / 2);
+                
             }
-            }
+           
             if(ball.y >= HEIGHT){
                 g.setColor(Color.RED);
                 g.drawString("GAME OVER", WIDTH / 2 - 145, HEIGHT / 2);
                 
             }
+        g.setFont(scoreText);
+        g.setColor(Color.BLUE);
+        g.drawString("" + score, 25, 590);
     
         
             // GAME DRAWING ENDS HERE
@@ -269,19 +276,21 @@ public class BrickBreaker extends JComponent {
             // hit detection
             for (int x = 0; x < bricks.length; x++){
             if (ball.intersects(bricks[x])) {
+                score = score + 50;
                 ballXDirection = ballXDirection * 1;
                 ballYDirection = ballYDirection * -1;
             }
             }
             
             // When you win the game 
-            for (int x = 0; x > bricks.length; x++){
-                if(bricks[x].x >= WIDTH){
-                    youWin = true;
+            
+                if(bricks[41].x >= WIDTH){
+                    repaint();
+                    done = true;
                     
                     
                 }
-            }
+            
             
             // GAME LOGIC ENDS HERE 
             // update the drawing (calls paintComponent)
