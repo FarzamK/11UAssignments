@@ -141,7 +141,7 @@ public class BrickBreaker extends JComponent {
                 
             }
         g.setFont(scoreText);
-        g.setColor(Color.BLUE);
+        g.setColor(Color.ORANGE);
         g.drawString("" + score, 25, 590);
     
         
