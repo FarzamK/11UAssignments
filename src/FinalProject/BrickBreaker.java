@@ -56,7 +56,13 @@ public class BrickBreaker extends JComponent {
     boolean youWin = false;
     boolean gameOver = false;
     
-    Font biggerFont = new Font("calibri", Font.BOLD, 40);
+    boolean gameBeingPlayed = true;
+    boolean gameOverScreen = false;
+    
+    
+    
+    Font text = new Font("arial", Font.BOLD, 40);
+    Font text2 = new Font("arial", Font.BOLD, 42);
     // create the bricks to break
     Rectangle[] bricks = new Rectangle[50];
 
@@ -118,16 +124,19 @@ public class BrickBreaker extends JComponent {
             g.fillRect(bricks[i].x, bricks[i].y, bricks[i].width, bricks[i].height);
             }
         }
+            g.setFont(text);
             g.setColor(Color.GREEN);
+            for(int i = 0; i < bricks.length; i++){
             if (youWin == true){
-                g.drawString("YOU WIN", WIDTH / 2 - 175, HEIGHT / 2);
+                g.drawString("YOU WIN", WIDTH / 2 - 145, HEIGHT / 2);
             }
-            g.setColor(Color.RED);
-            if(gameOver == true){
-                g.drawString("GAME OVER", WIDTH / 2 - 175, HEIGHT / 2);
+            }
+            if(ball.y >= HEIGHT){
+                g.setColor(Color.RED);
+                g.drawString("GAME OVER", WIDTH / 2 - 145, HEIGHT / 2);
                 
             }
-            
+    
         
             // GAME DRAWING ENDS HERE
         
@@ -224,15 +233,18 @@ public class BrickBreaker extends JComponent {
             if (ball.intersects(paddle)) {
                 ballYDirection = ballYDirection * -1;
             }
+            
+            if(youWin == true){
+                done = true;
+            }
             // bottom of ball hit height of screen
             
                 if(ball.y >= HEIGHT){
-                    gameOver = true;
+                    done = true;
                 }
             
-            if (gameOver == true){
-                done = true;
-            }
+           
+            
             // top of ball hit top of the screen
             if (ball.y <= 0) {
                 ballYDirection = ballYDirection * -1;
@@ -263,15 +275,12 @@ public class BrickBreaker extends JComponent {
             }
             
             // When you win the game 
-            for (int x = 0; x < bricks.length; x++){
-                if(bricks[x].x <= WIDTH){
-                    youWin = false;
+            for (int x = 0; x > bricks.length; x++){
+                if(bricks[x].x >= WIDTH){
+                    youWin = true;
                     
                     
                 }
-            }
-            if(youWin == true){
-                done = true;
             }
             
             // GAME LOGIC ENDS HERE 
